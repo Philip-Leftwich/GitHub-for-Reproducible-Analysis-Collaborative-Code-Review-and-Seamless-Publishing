@@ -119,6 +119,7 @@ knitr::include_graphics("images/meta.png")
 :::
 
 ::::
+
 ---
 
 ## Open Science Framework
@@ -246,9 +247,37 @@ knitr::include_graphics("images/lifecycle.png")
 ::::
 
 
+## Command Line vs GUI
 
+::::{.columns}
 
+:::{.column}
 
+:::{.incremental}
+- Command Line
+
+  - Use Git commands like git add, git commit, and git push in a terminal.
+
+  - Offers full control and flexibility.
+  
+- Github desktop/coding plugins
+
+  - Graphical interface
+  
+  - Easier to learn
+
+:::
+
+:::
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/gui-vs-cli-sm.png")
+```
+:::
+
+::::
 
 
 
