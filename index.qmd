@@ -146,11 +146,11 @@ Git is software used for version control. It helps track changes in files and al
 knitr::include_graphics("images/git-branch.png")
 ```
 
-## Version Control: GitHub tracks changes to code, data, and documents over time.
+## Version Control: Git tracks changes to code, data, and documents over time.
 
 Ensures that research can be repeated and verified by others.
 
-- GitHub tracks changes to code, data, and documents over time.
+- Git tracks changes to code, data, and documents over time.
 
 - Ensures that research can be repeated and verified by others.
 
