@@ -1,0 +1,534 @@
+---
+title: "Github"
+subtitle: "Reproducible Analyses, Collaborative Code Review, and Seamless Publishing"
+author: Philip Leftwich
+format: 
+ revealjs:
+      logo: uea-logo.png
+      theme: style.scss
+      height: 900
+      width: 1600
+      title-slide-attributes:
+        data-background-color: "#D9DBDB"
+ pdf:
+      include-in-header: 
+       - "pdf.tex"
+       - "columns.tex"
+      toc: true
+      toc-depth: 2
+      fontsize: 12pt
+      code-block-bg: lightgrey
+
+---
+
+
+
+
+---
+
+
+## Github
+
+::::{.columns}
+
+:::{.column width="40%"}
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/th.png")
+```
+
+
+:::
+
+:::{.column width="60%"}
+
+GitHub is a powerful platform that empowers researchers, developers, and teams to collaborate, manage code, and streamline the entire lifecycle of their projects. 
+
+It offers robust version control, code review, and publishing capabilities, making it an essential tool for modern, reproducible, and collaborative analysis and development.
+
+:::
+
+::::
+
+
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(gt)
+library(gtExtras)
+```
+
+
+
+
+## Many researchers say they’ll share data — but don’t
+
+::::{.columns}
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/data-share.png")
+```
+
+[Puljak et al 2022](https://www.nature.com/articles/d41586-022-01692-1)
+
+
+:::
+
+:::{.column}
+
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/not-available.png")
+```
+
+[Hussey 2023](https://osf.io/preprints/psyarxiv/jbu9r)
+
+:::
+
+::::
+
+---
+
+## Reproducibility Trial
+
+::::{.columns}
+
+:::{.column}
+
+:::{.incremental}
+
+- In 2023 [246 biologists were give the same dataset](https://www.nature.com/articles/d41586-023-03177-1)
+
+- There was a wide variety of results and conclusions due to analytical choices
+
+- 'Many analysts method'
+
+- Requires access and comparison of analytical methods
+
+:::
+:::
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="60%", fig.alt = "Forest plots of meta-analytic estimated standardized effect sizes (Zr, blue triangles) and 1016 their 95% confidence intervals for each effect size included in the meta-analysis model. (A) Blue tit 1017 analyses: Points where Zr are less than 0 indicate analyses that found a negative relationship 1018 between sibling number and nestling growth."}
+knitr::include_graphics("images/meta.png")
+```
+
+:::
+
+::::
+---
+
+## Open Science Framework
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/workflow-21.png")
+```
+
+
+[Open Science Framework](https://www.cos.io/products/osf)
+
+## What is Git?
+
+Git is software used for version control. It helps track changes in files and allows multiple collaborators to work on a project without overwriting each other's work
+
+- Versioning: Keep a history of changes to files and revert to earlier versions.
+
+- Collaboration: Multiple users can work on the same project without conflict.
+
+- Branching: Explore new ideas or test features without altering the main project.
+
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/git-branch.png")
+```
+
+## Version Control: GitHub tracks changes to code, data, and documents over time.
+
+Ensures that research can be repeated and verified by others.
+
+- GitHub tracks changes to code, data, and documents over time.
+
+- Ensures that research can be repeated and verified by others.
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/git-file-track.png")
+```
+
+---
+
+## Version control
+
+::::{.columns}
+
+:::{.column}
+
+If you use Office 365 or Google Docs, you may already be using version control
+
+It is a more efficient, cleaner and safer way of keeping track of file development
+
+:::
+
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/final_final.png")
+```
+:::
+
+::::
+
+
+## Tracking Research Artifacts with Git
+
+::::{.columns}
+
+:::{.column}
+
+- Git manages various research artifacts such as data, code, and documents.
+
+- It supports version control for lab notebooks, datasets, manuscripts, and statistical code, keeping a complete history of changes.
+
+- Git works best with plain-text formats (like .csv, LaTeX, Markdown), but can also handle binary files (like Word documents).
+
+
+:::
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/git-commits.png")
+```
+
+
+[Ram 2013](https://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7)
+
+:::
+
+::::
+
+
+## Working with Git
+
+::::{.columns}
+
+:::{.column width="55%"}
+
+:::{.incremental}
+
+- File Tracking:
+Git tracks changes in your project files by monitoring the working directory.
+
+- New or modified files appear as "untracked" initially.
+
+- Staging:
+Use git add to move changes into the staging area, preparing them for a commit.
+
+- Committing:
+Save a snapshot of the staged changes with git commit.
+Each commit creates a version in the repository, with a message describing the changes.
+
+:::
+
+:::
+
+:::{.column width="45%"}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/lifecycle.png")
+```
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+## GitHub
+
+
+::::{.columns}
+
+:::{.column}
+
+* Git a free and open-source version control system
+
+* Works locally on your machine to manage project versions
+
+* Main tasks: Staging, committing, branching, and merging changes
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/git.png")
+```
+
+:::
+
+:::{.column}
+
+* A cloud-based platform that hosts Git repositories and adds collaboration features
+
+* Works online to host repositories, enabling collaboration and sharing
+
+* Main tasks: Pull requests, issue tracking, repository management, and documentation.
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/github.png")
+```
+
+
+:::
+
+::::
+
+
+## Working on Github
+
+::::{.columns}
+
+:::{.column width="40%"}
+
+- Repositories: Store and manage project files.
+
+- Pull Requests: Collaborators suggest changes and request feedback.
+
+- Issues: Track tasks, bugs, and feature requests.
+
+- GitHub Pages: Easily publish project documentation or websites.
+
+:::
+
+:::{.column width="60%"}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/git-overview.png")
+```
+
+:::
+
+::::
+
+
+## Tips when working with Github
+
+:::{.incremental}
+
+- **Fork:** Make your own copy of someone else’s repo in GitHub. If you fork someone’s repo, that means you can’t mess with their code (which would require them adding you as a collaborator to do directly)
+
+- **Clone:** Download an existing repo to your local machine so you can work with it
+
+- **Stage/commit:** Stage changes, then Commit (with a useful, descriptive message to remind you what is changed in that version) to store that version
+
+- **Push:** Send committed changes to GitHub
+
+- **Pull** Retrieve changes made in Github to your local machine
+
+:::
+
+## Github repository
+
+::::{.columns}
+
+:::{.column width="40%"}
+
+- Repository: A storage space for your project’s files and history on GitHub.
+
+- Public/Private: Repositories can be public or private.
+
+- README: A file that introduces and explains the project.
+
+- Commits: Track changes to the project over time.
+
+- Branches: Create different versions of the project.
+
+:::
+
+:::{.column width="60%"}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/git-repository.png")
+```
+
+:::
+
+::::
+
+## Github for reproducible research
+
+::::{.columns}
+
+:::{.column}
+
+- GitHub ensures all research artifacts (code, data, notes) are stored, versioned, and accessible.
+
+- Open Science: Share projects publicly to foster collaboration and reproducibility.
+
+- Integrated with Zenodo for DOI generation, making it easier to cite research artifacts.
+
+:::
+
+:::{.column}
+
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/zenodo.png")
+```
+
+:::
+
+::::
+
+## GitHub Pages for Reproducible Documents, Slides, and Websites
+
+:::{.incremental}
+
+- GitHub Pages: A free tool that hosts static websites directly from your GitHub repository.
+
+- Slides: Easily publish interactive presentations made with tools like Quarto or Reveal.js.
+
+- Reproducible Documents: Host Quarto or Markdown files, allowing you to share dynamic reports.
+
+- Websites: Create research websites or project documentation without needing server management.
+
+:::
+
+## GitHub Pages for Reproducible Documents, Slides, and Websites
+
+
+- Reproducible Documents: Host Quarto or Markdown files, allowing you to share dynamic reports.
+
+```{r, echo=FALSE, out.width="120%"}
+knitr::include_graphics("images/rstudio-hello.png")
+```
+
+
+## GitHub Pages for Reproducible Documents, Slides, and Websites
+
+- Websites: Create research websites or project documentation without needing server management.
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/webpages.png")
+```
+
+## Collaborative Code Review
+
+- Peer review and collaboration are essential in research and analysis.
+
+- [Ivemey-Cook et al 2023](https://academic.oup.com/jeb/article/36/10/1347/7577476?login=false)
+
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/code_review.jpeg")
+```
+
+
+## Collaborative Code Review
+
+
+- GitHub’s "Pull Requests" allow for code review, suggestions, and discussions.
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/github-discussion.png")
+```
+
+
+## Github for Teaching and Learning
+
+GitHub Classroom: A free tool that helps educators manage coding assignments and student repositories.
+
+::::{.columns}
+
+:::{.column}
+
+- Distribute coding projects with one click.
+
+- Automatically create private student repositories for assignments.
+
+- Review and provide feedback directly on student code.
+
+- Supports collaboration and peer review, mimicking real-world development environments.
+
+:::
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/classroom.png")
+```
+
+:::
+
+::::
+
+
+## Tips for getting the most out of Github
+
+::::{.columns}
+
+:::{.column}
+
+- Github is public, and an opportunity to build a portfolio of data science projects
+
+- Fill out your profile page
+
+- Make sure projects are well organised with clear descriptions in a README
+
+- Follow other data scientists, star useful/favourite projects, fork projects to work on them (even if not planning to actively submit pull requests)
+
+:::
+
+:::{.column}
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/git-profile.png")
+```
+
+:::
+
+::::
+
+
+## Keep learning
+
+
+[Github](https://github.com/)
+
+[Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+[Github for beginners](https://www.datacamp.com/tutorial/github-and-git-tutorial-for-beginners?dc_referrer=https%3A%2F%2Fwww.google.com%2F)
+
+[Github Desktop](https://github.com/apps/desktop)
+
+[Software Carprenty](https://swcarpentry.github.io/git-novice/)
+
+
+## Contact
+
+
+
+<br>
+
+{{< fa globe >}} [https://philip-leftwich.github.io/](https://philip-leftwich.github.io/)
+
+<br> 
+
+{{< fa brands linkedin >}} [https://www.linkedin.com/in/philip-leftwich-117052155/](https://www.linkedin.com/in/philip-leftwich-117052155/)
+
+<br>
+
+{{< fa brands github >}} [(https://github.com/Philip-Leftwich](https://github.com/Philip-Leftwich)
+
+<br>
+
+{{< fa laptop >}} <a href="mailto:p.leftwich@uea.ac.uk">p.leftwich@uea.ac.uk</a>
+
+
+
+
